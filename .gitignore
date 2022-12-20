@@ -3,5 +3,7 @@
 /.idea/
 
 /jedis_redisdemo/target/
+/jedis_redisdemo/jedis_redisdemo.iml
 
 /redis_springboot/target/
+/redis_springboot/redis_springboot.iml
