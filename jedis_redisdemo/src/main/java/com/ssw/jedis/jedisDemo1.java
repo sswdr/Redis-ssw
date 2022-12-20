@@ -54,7 +54,7 @@ public class jedisDemo1 {
 //
 //    public static void main(String[] args) {
 //        //创建Jedis对象
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //        //测试
 //        String value = jedis.ping();
 //        System.out.println(value);
@@ -65,7 +65,7 @@ public class jedisDemo1 {
 //    @Test
 //    public void demo5() {
 //        //创建Jedis对象
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //
 //        jedis.zadd("china",100d,"shanghai");
 //
@@ -79,7 +79,7 @@ public class jedisDemo1 {
 //    @Test
 //    public void demo4() {
 //        //创建Jedis对象
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //
 //        jedis.hset("users","age","20");
 //        String hget = jedis.hget("users", "age");
@@ -91,7 +91,7 @@ public class jedisDemo1 {
 //    @Test
 //    public void demo3() {
 //        //创建Jedis对象
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //
 //        jedis.sadd("names","lucy");
 //        jedis.sadd("names","mary");
@@ -105,7 +105,7 @@ public class jedisDemo1 {
 //    @Test
 //    public void demo2() {
 //        //创建Jedis对象
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //
 //        jedis.lpush("key1","lucy","mary","jack");
 //        List<String> values = jedis.lrange("key1", 0, -1);
@@ -117,7 +117,7 @@ public class jedisDemo1 {
 //    @Test
 //    public void demo1() {
 //        //创建Jedis对象
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //
 //        //添加
 //        jedis.set("name","lucy");

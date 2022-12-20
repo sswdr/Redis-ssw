@@ -114,7 +114,7 @@ public class PhoneCode {
 //    //3 验证码校验
 //    public static void getRedisCode(String phone,String code) {
 //        //从redis获取验证码
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //        //验证码key
 //        String codeKey = "VerifyCode"+phone+":code";
 //        String redisCode = jedis.get(codeKey);
@@ -130,7 +130,7 @@ public class PhoneCode {
 //    //2 每个手机每天只能发送三次，验证码放到redis中，设置过期时间120
 //    public static void verifyCode(String phone) {
 //        //连接redis
-//        Jedis jedis = new Jedis("192.168.44.168",6379);
+//        Jedis jedis = new Jedis("ubuntu-20.04.wsl",6379);
 //
 //        //拼接key
 //        //手机发送次数key
