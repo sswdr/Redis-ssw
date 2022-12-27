@@ -1,4 +1,5 @@
 # Project exclude paths
+/Redis-ssw.iml
 /target/
 /.idea/
 
@@ -9,4 +10,4 @@
 /redis_springboot/redis_springboot.iml
 
 /Seckill/target/
-/Seckill/redis_springboot.iml
+/Seckill/Seckill.iml
