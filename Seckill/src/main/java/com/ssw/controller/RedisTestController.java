@@ -34,9 +34,11 @@ public class RedisTestController {
         return ResponseEntity.ok(isSuccess);
     }
 
-    @ApiImplicitParam(name = "商品prodId", value = "prodId", required = false)
-    @ApiImplicitParam(name = "并发次数", value = "count", required = false)
-    @ApiImplicitParam(name = "线程休眠时间", value = "threadSleep", required = false)
+    /**
+     * prodId       商品prodId
+     * count        并发次数
+     * threadSleep  线程休眠时间
+     */
     @ApiOperation(value = "并发秒杀案例")
     @GetMapping("/SecKill2")
     public ResponseEntity<Boolean> SecKill_redis_doSecKill(@RequestParam(value = "prodId") String prodId,
@@ -62,7 +64,7 @@ public class RedisTestController {
                 }
             }).start();
             try {
-                Thread.sleep(10);
+                Thread.sleep(threadSleep);
                 // 让计数器-1，直至为0，唤醒所有被CountDownLatch阻塞的线程
                 latch.countDown();
                 System.out.println("countDownLatch执行一次，剩余count：" + latch.getCount());
