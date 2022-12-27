@@ -1,10 +1,10 @@
 package com.ssw.controller;
 
-import cn.hutool.json.JSONObject;
 import com.ssw.redis.SecKill_redis;
 import com.ssw.redis.SecKill_redisByScript;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +22,9 @@ import java.util.concurrent.CountDownLatch;
 @RestController
 public class RedisTestController {
 
-    @ApiImplicitParam(name = "prodId", value = "prodId", required = false)
     @ApiOperation(value = "秒杀案例")
     @GetMapping("/SecKill1")
+    @ApiImplicitParam(name = "prodId", value = "商品prodId", required = false)
     public ResponseEntity<Boolean> SecKill_redisByScript_doSecKill(@RequestParam(value = "prodId") String prodId) throws Exception {
         String userId = new Random().nextInt(50000) + "";
 
@@ -41,8 +41,13 @@ public class RedisTestController {
      */
     @ApiOperation(value = "并发秒杀案例")
     @GetMapping("/SecKill2")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "prodId", value = "商品prodId", dataType = "string", paramType = "query", example = "1", required = false),
+            @ApiImplicitParam(name = "count", value = "并发次数", dataType = "int", paramType = "query", example = "100", required = false),
+            @ApiImplicitParam(name = "threadSleep", value = "线程休眠时间", dataType = "int", paramType = "query", example = "10", required = false),
+    })
     public ResponseEntity<Boolean> SecKill_redis_doSecKill(@RequestParam(value = "prodId") String prodId,
-                                                           @RequestParam(value = "prodId") Integer count,
+                                                           @RequestParam(value = "count") Integer count,
                                                            @RequestParam(value = "threadSleep") Integer threadSleep) throws Exception {
         // 模拟5个并发请求
         CountDownLatch latch = new CountDownLatch(count);
