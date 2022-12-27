@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ssw</groupId>
-    <artifactId>Redis-ssw</artifactId>
+    <artifactId>Seckill</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <description>Redis-ssw</description>
+    <description>Seckill</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
